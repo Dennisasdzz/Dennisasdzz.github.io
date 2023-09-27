@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Zihao.world</title>
+    <title>Zihao's Homepage</title>
     <style>
         body {
             display: flex;
@@ -11,55 +11,133 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #eaf2f8;
-            font-family: Arial, sans-serif;
+            background-color: #f7f8fa;
+            font-family: "Arial", sans-serif;
         }
 
         .container {
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
         }
 
-        .greetings {
+	.box {
+  width: 300px;
+  height: 100px;
+  background-color: gray;
+  margin: 10px;
+	}
+
+        .profile {
+	width: 100%;
+            padding: 30px;
+            margin-bottom: 30px;
+            background-color: white;
+            border: 2px solid #d3d3d3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
             color: #336699;
-            font-size: 28px;
+            font-size: 32px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
+        .info-list {
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
         ul {
-            text-align: left;
             padding-left: 20px;
+            margin-top: 10px;
+            list-style-type: none;
         }
 
         li {
             margin-bottom: 8px;
         }
 
-        a {
-            color: #336699;
-            text-decoration: none;
+        .news-box {
+width: 100%;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: white;
+            border: 2px solid #d3d3d3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
 
-        a:hover {
-            text-decoration: underline;
+        .news-title {
+            color: #336699;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .news-content {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        .contact-box {
+width: 100%;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: white;
+            border: 2px solid #d3d3d3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .contact-title {
+            color: #336699;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+	           width: 100%;
+            max-width: 600px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <p class="greetings">Greetings! I'm Zihao Zhang</p>
-        <p>Please find me from:</p>
-        <ul>
-            <li><a href="https://space.bilibili.com/390510053" target="_blank">Bilibili for Apex!</a></li>
-            <li><a href="https://github.com/Dennisasdzz" target="_blank">GitHub</a></li>
-            <li>Email: <a href="mailto:zihaoz2021@foxmail.com">zihaoz2021@foxmail.com</a></li>
-        </ul>
-    </div>
-</body>
+        <div class="profile">
+            <img src="./picture/taylor.jpg" alt="Taylor" class="profile-picture">
+            <h1>Greetings! I'm Zihao Zhang</h1>
+        </div>
 
-</html>
+        <div class="news-box">
+            <h2 class="news-title">Latest News:</h2>
+            <ul class="news-content">
+                <li>2023-7-25：<p>Thanks to Ms. Wang and Mr.Tao, I have published a paper at ACMMM! You can read it <a href="./paper/DPMGSC.pdf" target="_blank" download="DPMGSC.pdf">here</a>.</p></li>
+            </ul>
+        </div>
+<div class="contact-box">
+  <h2 class="contact-title">Contact Info:</h2>
+  <div class="contact-info">
+    <p>Bilibili: <a href="https://space.bilibili.com/390510053" target="_blank">bilibili for Apex!</a></p>
+    <p>GitHub: <a href="https://github.com/Dennisasdzz" target="_blank">Github for study!</a></p>
+    <p>Email: <a href="mailto:zihaoz2021@foxmail.com">Contact with me!</a></p>
+  </div>
+</div>
