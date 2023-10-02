@@ -10,36 +10,45 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background-color: #f7f8fa;
             font-family: "Arial", sans-serif;
         }
 
         .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-	.box {
-  width: 300px;
-  height: 100px;
-  background-color: gray;
-  margin: 10px;
-	}
-
-        .profile {
-	width: 100%;
-            padding: 30px;
-            margin-bottom: 30px;
-            background-color: white;
+        .box {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
             border: 2px solid #d3d3d3;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .profile {
+            flex-basis: 100%;
+        }
+
+        .news {
+            flex-basis: 60%;
+        }
+
+        .contact {
+            flex-basis: 30%;
+        }
+
         .profile-picture {
+            max-width: 100%;
             width: 150px;
             height: 150px;
             border-radius: 50%;
@@ -59,27 +68,6 @@
             line-height: 1.5;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-top: 10px;
-            list-style-type: none;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        .news-box {
-width: 100%;
-            padding: 20px;
-            margin-bottom: 30px;
-            background-color: white;
-            border: 2px solid #d3d3d3;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-        }
-
         .news-title {
             color: #336699;
             font-size: 24px;
@@ -92,19 +80,6 @@ width: 100%;
             line-height: 1.5;
         }
 
-        .contact-box {
-width: 100%;
-            padding: 20px;
-            margin-bottom: 30px;
-            background-color: white;
-            border: 2px solid #d3d3d3;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-
         .contact-title {
             color: #336699;
             font-size: 24px;
@@ -113,33 +88,84 @@ width: 100%;
         }
 
         .contact-info {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
             font-size: 18px;
-	           width: 100%;
-            max-width: 600px;
+        }
+
+        button {
+            background-color: #ffffff;
+            color: #ff0000;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .box {
+                flex-basis: auto;
+            }
+
+            .box.profile,
+            .box.news,
+            .box.contact {
+                width: 100%;
+                max-width: none;
+                margin: 10px;
+            }
+
+            .profile-picture {
+                width: 100px;
+                height: 100px;
+                margin: 0 auto 10px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="profile">
-            <img src="./picture/taylor.jpg" alt="Taylor" class="profile-picture">
+        <div class="box profile">
+            <img src="./picture/Taylor.jpg" alt="Taylor" class="profile-picture">
             <h1>Greetings! I'm Zihao Zhang.</h1>
-	<h5>A student studying for a master's degree at Xidian University </h5>
-	<h5>Specializing in pattern recognition and multimodal learning.</h5>
+            <p>I am a student studying for a master's degree at Xidian University, specializing in pattern recognition and multimodal learning.</p>
         </div>
 
-        <div class="news-box">
+        <div class="box news">
             <h2 class="news-title">Latest News:</h2>
             <ul class="news-content">
-                <li>2023-7-25：<p>Thanks to Ms. Wang and Mr.Tao, one paper was accepted by ACM MM 2023. It will be retrieved and published in the near future.</a>.</p></li>
+                <li>
+                    <p>2023-7-25: Thanks to Ms. Wang and Mr. Tao, one paper was accepted by ACM Multimedia 2023. <button onclick="showImage()">Click here &#x1F601</button></p>
+                </li>
             </ul>
         </div>
-<div class="contact-box">
-  <h2 class="contact-title">Contact Info:</h2>
-  <div class="contact-info">
-    <p>Bilibili: <a href="https://space.bilibili.com/390510053" target="_blank">bilibili for Apex Legends</a></p>
-    <p>GitHub: <a href="https://github.com/Dennisasdzz" target="_blank">Github for study</a></p>
-    <p>Email: <a href="mailto:zihaoz2021@foxmail.com">Contact with me</a></p>
-  </div>
-</div>
+
+        <div class="box contact">
+            <h2 class="contact-title">Contact Info:</h2>
+            <div class="contact-info">
+                <p>Bilibili: <a href="https://space.bilibili.com/390510053" target="_blank">bilibili for Apex Legends</a></p>
+                <p>GitHub: <a href="https://github.com/Dennisasdzz" target="_blank">Github for study</a></p>
+                <p>Email: <a href="mailto:zihaoz2021@foxmail.com">Contact with me</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="hidden-image" style="display: none;"><img src="./picture/acmmm.jpg" alt="ACM MM 2023"></div>
+
+    <script>
+        function showImage() {
+            var image = document.createElement('img');
+            image.src = document.getElementById('hidden-image').firstChild.src;
+            var newWindow = window.open('', '_blank', 'width=1000,height=400');
+            newWindow.document.body.appendChild(image);
+        }
+    </script>
+</body>
+
+</html>
